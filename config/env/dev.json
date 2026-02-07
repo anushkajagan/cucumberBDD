@@ -1,0 +1,8 @@
+{
+  "baseUrl": "http://localhost:3000",
+  "Email": "info.chalicas@gmail.com",
+  "Password": "Apple**2026",
+  "homePageTitle": "NextExam - Dev",
+  "certification": "Professional Data Engineer",
+  "timeout": 30000
+}
