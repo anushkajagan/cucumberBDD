@@ -1,6 +1,6 @@
 import { Then, When } from "@cucumber/cucumber";
 import { PlaywrightWrapper } from "../utils/wrapper";
-import { ac, r } from "@faker-js/faker/dist/airline-BUL6NtOJ";
+import { faker } from '@faker-js/faker';
 
 const getWrapper = (world: any) => new PlaywrightWrapper(world.page, world.context);
 
