@@ -2,7 +2,7 @@ Feature: Create Lead in Leaftaps CRM
 
  Background:
     Given Load the Leaftaps login page
-    When Enter the Username as "demosalesmanager"
+    When Enter the username as "demosalesmanager"
     And Enter the password as "crmsfa"
     And Click on the Login button
  
