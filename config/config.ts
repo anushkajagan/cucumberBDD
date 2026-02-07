@@ -16,7 +16,7 @@ const SET_BROWSER = 'chrome'
 const browserOptions: Record<string, LaunchOptions> = {
   chrome: {
     channel: 'chrome',
-    headless: false,
+    headless: true,
     args: [
       '--start-maximized',
       '--disable-web-security',
@@ -27,7 +27,7 @@ const browserOptions: Record<string, LaunchOptions> = {
   },
   msedge: {
     channel: 'msedge',
-    headless: false,
+    headless: true,
     args: [
       '--start-maximized',
       '--disable-web-security',
@@ -37,12 +37,12 @@ const browserOptions: Record<string, LaunchOptions> = {
     slowMo: 20
   },
   firefox: {
-    headless: false,
+    headless: true,
     slowMo: 20,
     args: ['--kiosk'],
   },
   webkit: {
-    headless: false,
+    headless: true,
     slowMo: 20,
     args: ['--start-maximized'],
   },
