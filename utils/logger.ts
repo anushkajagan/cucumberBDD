@@ -1,18 +1,21 @@
 import winston from 'winston';
 
-// Create a custom logger
-export function createLogger(module: string) {
+export function createLogger(moduleName: string) {
+  const logFormat = winston.format.printf(
+    (info: winston.Logform.TransformableInfo) => {
+      return `[${info.timestamp}] [${info.level.toUpperCase()}] [${moduleName}]: ${info.message}`;
+    }
+  );
+
   return winston.createLogger({
     level: process.env.LOG_LEVEL || 'info',
     format: winston.format.combine(
       winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-      winston.format.printf(({ timestamp, level, message }) => {
-        return `[${timestamp}] [${level.toUpperCase()}] [${module}]: ${message}`;
-      })
+      logFormat
     ),
     transports: [
       new winston.transports.Console(),
       new winston.transports.File({ filename: 'logs/test.log' })
-    ]
+    ],
   });
 }
